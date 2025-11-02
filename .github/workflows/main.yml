@@ -8,4 +8,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print greeting
-        run: echo "Hello Barbara 💚 – your first GitHub Action is running!"
+        run: echo "Hello Barbara 💚 – your first GitHub Action is running!
+name: Mini CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Simuliere Build-Prozess
+        run: echo "🔧 Building project for Barbara..."
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Testen der Anwendung
+        run: echo "✅ Tests erfolgreich durchlaufen!"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Simuliere Deployment
+        run: echo "🚀 Deployment erfolgreich! Bereit zum Start!"        
