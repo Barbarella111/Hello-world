@@ -1,14 +1,3 @@
-name: Hello World
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  say_hello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print greeting
-        run: echo "Hello Barbara 💚 – your first GitHub Action is running!
 name: Mini CI/CD Pipeline
 
 on:
